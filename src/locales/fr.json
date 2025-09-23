@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "airpods": "AirPods",
+    "rentals": "Locations",
+    "workshop": "Atelier",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Bonjour, je suis Aimed Dine Chebili",
+      "subtitle": "Développeur Full Stack et Entrepreneur Multidisciplinaire",
+      "description": "À 20 ans, j'ai construit un écosystème d'entreprises qui va de la technologie audio aux hébergements touristiques et au diagnostic automobile. Ma passion est de créer des solutions qui connectent l'innovation technologique aux besoins réels des personnes.",
+      "cta": "Découvrez mon histoire",
+      "highlight": "Disponible pour de nouveaux projets et collaborations"
+    },
+    "about": {
+      "title": "Qui je suis",
+      "biography": "Biographie brève, motivation, expérience.",
+      "values": {
+        "title": "Mes valeurs",
+        "trust": "Confiance",
+        "innovation": "Innovation",
+        "quality": "Qualité",
+        "closeness": "Proximité"
+      },
+      "timeline": {
+        "title": "Mon parcours",
+        "idea": "Idée initiale",
+        "airpods": "Magasin AirPods",
+        "rentals": "Locations",
+        "workshop": "Atelier"
+      },
+      "languages": {
+        "title": "Langues",
+        "subtitle": "Communication multiculturelle et globale"
+      },
+      "skills": {
+        "title": "Compétences Techniques",
+        "subtitle": "Technologies et outils que je maîtrise"
+      },
+      "experience": {
+        "title": "Expérience Professionnelle",
+        "subtitle": "Mon parcours entrepreneurial et professionnel"
+      },
+      "education": {
+        "title": "Formation Académique",
+        "subtitle": "Éducation continue et spécialisation"
+      },
+      "cta": {
+        "title": "Travaillons ensemble ?",
+        "subtitle": "Je suis toujours ouvert à de nouveaux projets et collaborations. Parlons de votre prochaine idée !",
+        "contact": "Contacter Maintenant",
+        "services": "Voir les Services"
+      }
+    },
+    "services": {
+      "title": "Mes services",
+      "airpods": {
+        "title": "AirPods Alicante",
+        "description": "Magasin Apple original, garantie officielle"
+      },
+      "rentals": {
+        "title": "Location d'appartements à Mostaganem",
+        "description": "50€/jour, 500m de la plage"
+      },
+      "workshop": {
+        "title": "Aimed Diag Solutions",
+        "description": "Diagnostic et mécanique avancée"
+      }
+    },
+    "testimonials": {
+      "title": "Ce que disent nos clients"
+    },
+    "cta": {
+      "discover": "Découvrez mes services",
+      "contact": "Contactez-moi"
+    }
+  },
+  "airpods": {
+    "hero": {
+      "title": "AirPods Alicante - Votre magasin de confiance pour les meilleurs AirPods à Alicante",
+      "description": "AirPods Max Pro, AirPods 4, AirPods 3 avec garantie Apple, livraison gratuite, support 24/7"
+    },
+    "products": {
+      "title": "Produits en vedette"
+    },
+    "features": {
+      "title": "Caractéristiques"
+    },
+    "testimonials": {
+      "title": "Témoignages"
+    },
+    "cta": {
+      "buy": "Acheter maintenant"
+    }
+  },
+  "rentals": {
+    "hero": {
+      "title": "Locations d'été à Mostaganem",
+      "description": "4 appartements, 50€ par jour, 500m de la plage"
+    },
+    "apartments": {
+      "title": "Nos appartements"
+    },
+    "booking": {
+      "title": "Réservez votre appartement",
+      "nights": "Nuits",
+      "total": "Total",
+      "book": "Réserver"
+    },
+    "location": {
+      "title": "Emplacement"
+    },
+    "policy": {
+      "title": "Politique d'annulation"
+    }
+  },
+  "workshop": {
+    "hero": {
+      "title": "Aimed Diag Solutions",
+      "subtitle": "Votre partenaire de confiance pour le diagnostic automobile avancé",
+      "description": "Spécialisé dans le diagnostic électronique, la reprogrammation et la mécanique automobile avec les outils les plus performants du marché."
+    },
+    "sections": {
+      "taller": "TALLER",
+      "tarifas": "TARIFAS",
+      "opiniones": "OPINIONES",
+      "contactar": "CONTACTAR",
+      "videos": "VÍDEOS",
+      "acceso": "ACCESO TALLERES",
+      "soporte": "SOPORTE"
+    },
+    "basic": {
+      "title": "Services de base",
+      "services": [
+        "Lecture/effacement DTC",
+        "Remise à zéro vidange/service",
+        "Lecture km réel",
+        "Diagnostic ABS/Airbag"
+      ]
+    },
+    "advanced": {
+      "title": "Services avancés",
+      "services": [
+        "Clés/immo",
+        "Réparation UCH/BSI/compteurs",
+        "Reset crash airbag",
+        "Clonage ECU/BSI",
+        "Reprogrammation moteur"
+      ]
+    },
+    "mechanics": {
+      "title": "Mécanique",
+      "services": ["Amortisseurs", "Rotules", "Parallélisme", "Suspensions"]
+    },
+    "tools": {
+      "title": "Outils professionnels",
+      "basic": ["Renault CLIP", "VCDS", "Launch X431", "Delphi/Autocom"],
+      "advanced": [
+        "Kess/Ktag",
+        "Autotuner",
+        "Flex",
+        "CMD",
+        "FGTech",
+        "UPA",
+        "VVDI",
+        "Orange5",
+        "Xprog"
+      ]
+    },
+    "testimonials": {
+      "title": "Témoignages clients",
+      "subtitle": "Découvrez les expériences de nos clients satisfaits"
+    },
+    "pricing": {
+      "title": "Nos tarifs",
+      "basic": "Services de base",
+      "advanced": "Services avancés",
+      "mechanics": "Mécanique"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "send": "Envoyer"
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "close": "Fermer"
+  }
+}

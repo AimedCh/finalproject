@@ -1,0 +1,357 @@
+{
+  "categories": [
+    {
+      "id": "mas-buscados",
+      "name": "Más buscados",
+      "icon": "🔥",
+      "color": "bg-gradient-to-br from-red-400 to-yellow-400",
+      "description": "Los destinos más reservados y buscados por nuestros huéspedes",
+      "items": [
+        {
+          "id": "plage-clovis",
+          "name": "Plage Clovis",
+          "type": "playa",
+          "distance": "2.8km",
+          "rating": 9.2,
+          "tags": ["Top", "Familias", "SUP", "Servicios"],
+          "description": "Playa con servicios y actividades acuáticas",
+          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+          "source": "beaches-searcher.com"
+        },
+        {
+          "id": "marsa-beach",
+          "name": "Marsa Beach",
+          "type": "playa",
+          "distance": "2.6km",
+          "rating": 9.0,
+          "tags": ["Top", "Familias", "Baño seguro"],
+          "description": "Playa familiar ideal para nadar",
+          "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+          "source": "beaches-searcher.com"
+        },
+        {
+          "id": "sidi-el-ajal",
+          "name": "Sidi el-Ajal",
+          "type": "playa",
+          "distance": "8.5km",
+          "rating": 9.8,
+          "tags": ["Top", "Aguas cristalinas", "Rocas"],
+          "description": "Playa con tramos rocosos y agua muy clara",
+          "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+          "source": "beaches-searcher.com"
+        },
+        {
+          "id": "zina-beach-resort",
+          "name": "Zina Beach Resort",
+          "type": "alojamiento",
+          "distance": "5.2km",
+          "rating": 8.7,
+          "tags": ["Resort", "Piscina", "WiFi", "Parking"],
+          "description": "Resort frente al mar con todas las comodidades",
+          "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800",
+          "source": "booking.com"
+        }
+      ]
+    },
+    {
+      "id": "playas",
+      "name": "Playas",
+      "icon": "🏖️",
+      "color": "bg-gradient-to-br from-blue-400 to-teal-300",
+      "description": "Las mejores playas cerca de Ben Abdelmalek Ramdane",
+      "items": [
+        {
+          "id": "plage-clovis-detail",
+          "name": "Plage Clovis",
+          "distance": "2.8km",
+          "rating": 9.2,
+          "tags": ["Con servicios", "SUP", "Actividades"],
+          "description": "Muy cerca del pueblo, valorada con servicios y actividades acuáticas",
+          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+          "source": "beaches-searcher.com"
+        },
+        {
+          "id": "marsa-beach-detail",
+          "name": "Marsa Beach",
+          "distance": "2.6km",
+          "rating": 9.0,
+          "tags": ["Familias", "Baño seguro"],
+          "description": "Playa familiar, perfecta para baño seguro",
+          "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+          "source": "beaches-searcher.com"
+        },
+        {
+          "id": "sidi-el-ajal-detail",
+          "name": "Sidi el-Ajal",
+          "distance": "8.5km",
+          "rating": 9.8,
+          "tags": ["Aguas cristalinas", "Rocas", "Saltos"],
+          "description": "Playa con tramos de roca y agua muy clara, ideal para saltos",
+          "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+          "source": "beaches-searcher.com"
+        },
+        {
+          "id": "plage-chaabia",
+          "name": "Plage Chaabia",
+          "distance": "12.3km",
+          "rating": 8.5,
+          "tags": ["Virgen", "Dunas", "Natural"],
+          "description": "Tramo arenoso con dunas, opción virgen cercana",
+          "image": "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=800",
+          "source": "posts locales"
+        },
+        {
+          "id": "kef-lasfar",
+          "name": "Kef Lasfar",
+          "distance": "10.8km",
+          "rating": 8.8,
+          "tags": ["Natural", "Cuevas", "Virgen"],
+          "description": "Playa natural más retirada con cuevas costeras",
+          "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+          "source": "beaches-searcher.com"
+        }
+      ]
+    },
+    {
+      "id": "ciudades",
+      "name": "Ciudades",
+      "icon": "🏙️",
+      "color": "bg-gradient-to-br from-gray-400 to-blue-200",
+      "description": "Núcleos urbanos cercanos con servicios y vida urbana",
+      "items": [
+        {
+          "id": "mostaganem",
+          "name": "Mostaganem",
+          "distance": "15km",
+          "rating": 8.9,
+          "tags": ["Capital", "Museos", "Puerto", "Restaurantes"],
+          "description": "Capital de la wilaya, turismo, museos y puerto",
+          "image": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800",
+          "source": "wikipedia.org"
+        },
+        {
+          "id": "ben-abdelmalek",
+          "name": "Ben Abdelmalek Ramdane",
+          "distance": "0km",
+          "rating": 8.2,
+          "tags": ["Centro", "Local", "Servicios"],
+          "description": "Comuna local y centro de referencia",
+          "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+          "source": "wikipedia.org"
+        },
+        {
+          "id": "hadjadj",
+          "name": "Hadjadj",
+          "distance": "8km",
+          "rating": 7.8,
+          "tags": ["Pueblo", "Tradicional", "Cercano"],
+          "description": "Pueblo cercano con servicios locales",
+          "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800",
+          "source": "mapcarta.com"
+        }
+      ]
+    },
+    {
+      "id": "historia",
+      "name": "Con historia",
+      "icon": "🏛️",
+      "color": "bg-gradient-to-br from-yellow-400 to-orange-300",
+      "description": "Patrimonio costero y puntos culturales históricos",
+      "items": [
+        {
+          "id": "faro-cap-ivi",
+          "name": "Faro de Cap Ivi",
+          "distance": "1.2km",
+          "rating": 9.1,
+          "tags": ["Faro histórico", "Mirador", "Postales"],
+          "description": "Faro histórico con vistas panorámicas, perfecto para fotos",
+          "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+          "source": "lighthouse-index.com"
+        },
+        {
+          "id": "medina-mostaganem",
+          "name": "Medina de Mostaganem",
+          "distance": "15km",
+          "rating": 8.6,
+          "tags": ["Medina", "Arquitectura", "Cultural"],
+          "description": "Casco antiguo con arquitectura tradicional",
+          "image": "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800",
+          "source": "tripadvisor.com"
+        },
+        {
+          "id": "bordj-el-mehal",
+          "name": "Bordj el-Mehal",
+          "distance": "16km",
+          "rating": 8.3,
+          "tags": ["Fortaleza", "Historia", "Museo"],
+          "description": "Fortaleza histórica y museo local",
+          "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800",
+          "source": "tripadvisor.com"
+        }
+      ]
+    },
+    {
+      "id": "islas",
+      "name": "Islas",
+      "icon": "🏝️",
+      "color": "bg-gradient-to-br from-green-400 to-teal-200",
+      "description": "Excursiones en barco y islotes costeros",
+      "items": [
+        {
+          "id": "excursiones-barco",
+          "name": "Excursiones en Barco",
+          "distance": "15km",
+          "rating": 8.7,
+          "tags": ["Charter", "Excursión", "Costa"],
+          "description": "Excursiones para ver la costa desde el mar",
+          "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+          "source": "puerto-mostaganem"
+        },
+        {
+          "id": "ferry-valencia",
+          "name": "Ferry a Valencia",
+          "distance": "15km",
+          "rating": 8.4,
+          "tags": ["Ferry", "Internacional", "Valencia"],
+          "description": "Conexión marítima regular a Valencia, España",
+          "image": "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=800",
+          "source": "balearia.com"
+        },
+        {
+          "id": "islotes-locales",
+          "name": "Islotes Costeros",
+          "distance": "5-20km",
+          "rating": 8.1,
+          "tags": ["Barco privado", "Guía local", "Aventura"],
+          "description": "Pequeños islotes accesibles con barco privado",
+          "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+          "source": "guías locales"
+        }
+      ]
+    },
+    {
+      "id": "montanas",
+      "name": "Montañas",
+      "icon": "⛰️",
+      "color": "bg-gradient-to-br from-purple-400 to-blue-300",
+      "description": "Miradores, rutas de senderismo y naturaleza",
+      "items": [
+        {
+          "id": "djebel-chaibia",
+          "name": "Djebel Chaïbia",
+          "distance": "7.5km",
+          "rating": 8.5,
+          "tags": ["Senderismo", "Mirador", "Atardecer"],
+          "description": "Colina local ideal para senderismo y fotografía de atardecer",
+          "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+          "source": "geoview.info"
+        },
+        {
+          "id": "miradores-costa",
+          "name": "Miradores de la Costa",
+          "distance": "2-10km",
+          "rating": 8.8,
+          "tags": ["Mirador", "Fotografía", "Panorámica"],
+          "description": "Varios puntos elevados con vistas panorámicas al mar",
+          "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+          "source": "rutas locales"
+        },
+        {
+          "id": "rutas-cortas",
+          "name": "Rutas de Senderismo",
+          "distance": "5-15km",
+          "rating": 8.2,
+          "tags": ["Senderismo", "Naturaleza", "Fácil"],
+          "description": "Rutas cortas de dificultad fácil a moderada",
+          "image": "https://images.unsplash.com/photo-1551632811-561732d1e306?w=800",
+          "source": "mapas locales"
+        }
+      ]
+    },
+    {
+      "id": "actividades",
+      "name": "Actividades",
+      "icon": "🎯",
+      "color": "bg-gradient-to-br from-orange-400 to-pink-300",
+      "description": "Experiencias y deportes en la costa y alrededores",
+      "items": [
+        {
+          "id": "deportes-acuaticos",
+          "name": "Deportes Acuáticos",
+          "distance": "2-5km",
+          "rating": 9.0,
+          "tags": ["SUP", "Windsurf", "Alquiler"],
+          "description": "SUP, windsurf y alquiler de equipos en Plage Clovis",
+          "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+          "source": "beaches-searcher.com"
+        },
+        {
+          "id": "buceo-snorkel",
+          "name": "Buceo y Snorkel",
+          "distance": "3-8km",
+          "rating": 8.6,
+          "tags": ["Buceo", "Snorkel", "Club local"],
+          "description": "Clubs locales de buceo y snorkel en aguas cristalinas",
+          "image": "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=800",
+          "source": "youtube.com/clubs-locales"
+        },
+        {
+          "id": "pesca",
+          "name": "Pesca Deportiva",
+          "distance": "1-15km",
+          "rating": 8.4,
+          "tags": ["Pesca", "Charter", "Costa"],
+          "description": "Pesca desde costa y excursiones en barco",
+          "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+          "source": "puerto-mostaganem"
+        },
+        {
+          "id": "visitas-culturales",
+          "name": "Visitas Culturales",
+          "distance": "1-16km",
+          "rating": 8.7,
+          "tags": ["Faro", "Medina", "Historia"],
+          "description": "Visitas al faro Cap Ivi y paseos culturales en Mostaganem",
+          "image": "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800",
+          "source": "tripadvisor.com"
+        }
+      ]
+    },
+    {
+      "id": "mostaland",
+      "name": "Mostaland",
+      "icon": "🎡",
+      "color": "bg-gradient-to-br from-pink-400 to-purple-300",
+      "description": "Parque de atracciones familiar en Mostaganem",
+      "items": [
+        {
+          "id": "mostaland-parc",
+          "name": "Mostaland Parc",
+          "description": "El parque de atracciones más grande de Mostaganem con noria gigante y juegos familiares. Diversión garantizada para toda la familia.",
+          "image": "/img/imgAlquieres/mostaland.png",
+          "distance": "10km",
+          "rating": "4.5",
+          "tags": ["Familia", "Noria gigante", "Diversión", "Niños", "Atracciones"],
+          "mapLink": "https://maps.app.goo.gl/niRqKwQ1KxR5FEx38",
+          "website": "https://www.mostalandparc.com/",
+          "highlights": [
+            "🎡 Noria gigante con vistas panorámicas de Mostaganem",
+            "🎠 Carrusel clásico y juegos mecánicos",
+            "🎢 Montañas rusas para toda la familia",
+            "🍿 Zona de comida y snacks",
+            "🎪 Espectáculos y entretenimiento en vivo",
+            "🎯 Juegos de habilidad y premios",
+            "🚗 Amplio estacionamiento gratuito",
+            "📸 Zonas perfectas para fotos familiares"
+          ],
+          "schedule": "Abierto todos los días de 10:00 a 22:00",
+          "prices": "Entrada general desde 500 DA"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+

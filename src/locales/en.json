@@ -1,0 +1,179 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "airpods": "AirPods",
+    "rentals": "Rentals",
+    "workshop": "Workshop",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Hello, I'm Aimed Dine Chebili",
+      "subtitle": "Full Stack Developer and Multidisciplinary Entrepreneur",
+      "description": "At 20 years old, I've built a business ecosystem spanning from audio technology to tourist accommodations and automotive diagnostics. My passion is creating solutions that connect technological innovation with real people's needs.",
+      "cta": "Discover my story",
+      "highlight": "Available for new projects and collaborations"
+    },
+    "about": {
+      "title": "Who I am",
+      "biography": "I am an entrepreneur with more than 10 years of experience in the technology and tourism sector. My passion for innovation has led me to create three complementary businesses that cover different market needs.",
+      "values": {
+        "title": "My values",
+        "trust": "Trust",
+        "innovation": "Innovation",
+        "quality": "Quality",
+        "closeness": "Closeness"
+      },
+      "timeline": {
+        "title": "My journey",
+        "idea": "2015 - Start in the technology sector",
+        "airpods": "2018 - AirPods Alicante",
+        "rentals": "2020 - Mostaganem Rentals",
+        "workshop": "2022 - Aimed Diag Solutions"
+      },
+      "languages": {
+        "title": "Languages",
+        "subtitle": "Multicultural and global communication"
+      },
+      "skills": {
+        "title": "Technical Skills",
+        "subtitle": "Technologies and tools I master"
+      },
+      "experience": {
+        "title": "Professional Experience",
+        "subtitle": "My entrepreneurial and professional journey"
+      },
+      "education": {
+        "title": "Academic Background",
+        "subtitle": "Continuous education and specialization"
+      },
+      "cta": {
+        "title": "Let's work together?",
+        "subtitle": "I'm always open to new projects and collaborations. Let's talk about your next idea!",
+        "contact": "Contact Now",
+        "services": "View Services"
+      }
+    },
+    "services": {
+      "title": "My services",
+      "airpods": {
+        "title": "AirPods Alicante",
+        "description": "Store specialized in high-quality wireless headphones. Not only Apple AirPods, but also the best brands on the market with official warranty."
+      },
+      "rentals": {
+        "title": "Apartment rentals in Mostaganem",
+        "description": "Summer apartments just 500m from the beach. Fixed price of 50€/day with all amenities included."
+      },
+      "workshop": {
+        "title": "Aimed Diag Solutions",
+        "description": "Workshop specialized in advanced automotive diagnosis. Mechanical and reprogramming services with the best tools on the market."
+      }
+    },
+    "testimonials": {
+      "title": "What our clients say"
+    },
+    "cta": {
+      "discover": "Discover my services",
+      "contact": "Contact me"
+    }
+  },
+  "airpods": {
+    "hero": {
+      "title": "AirPods Alicante - Your trusted store for the best AirPods in Alicante",
+      "description": "AirPods Max Pro, AirPods 4, AirPods 3 with Apple warranty, free shipping, 24/7 support"
+    },
+    "products": {
+      "title": "Featured products"
+    },
+    "features": {
+      "title": "Features"
+    },
+    "testimonials": {
+      "title": "Testimonials"
+    },
+    "cta": {
+      "buy": "Buy now"
+    }
+  },
+  "rentals": {
+    "hero": {
+      "title": "Summer rentals in Mostaganem",
+      "description": "4 apartments, 50€ per day, 500m from the beach"
+    },
+    "apartments": {
+      "title": "Our apartments"
+    },
+    "booking": {
+      "title": "Book your apartment",
+      "nights": "Nights",
+      "total": "Total",
+      "book": "Book"
+    },
+    "location": {
+      "title": "Location"
+    },
+    "policy": {
+      "title": "Cancellation policy"
+    }
+  },
+  "workshop": {
+    "hero": {
+      "title": "Aimed Diag Solutions",
+      "description": "Advanced diagnosis and mechanics"
+    },
+    "basic": {
+      "title": "Basic services",
+      "services": [
+        "DTC read/erase",
+        "Service/oil reset",
+        "Real km reading",
+        "ABS/Airbag diagnosis"
+      ]
+    },
+    "advanced": {
+      "title": "Advanced services",
+      "services": [
+        "Keys/immobilizer",
+        "ECU/BSI/counters repair",
+        "Crash airbag reset",
+        "ECU/BSI cloning",
+        "Engine reprogramming"
+      ]
+    },
+    "mechanics": {
+      "title": "Mechanics",
+      "services": ["Shock absorbers", "Ball joints", "Alignment", "Suspensions"]
+    },
+    "tools": {
+      "title": "Tools",
+      "basic": ["Renault CLIP", "VCDS", "Launch X431", "Delphi/Autocom"],
+      "advanced": [
+        "Kess/Ktag",
+        "Autotuner",
+        "Flex",
+        "CMD",
+        "FGTech",
+        "UPA",
+        "VVDI",
+        "Orange5",
+        "Xprog"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close"
+  }
+}

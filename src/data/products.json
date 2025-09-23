@@ -1,0 +1,137 @@
+{
+  "airpods": [
+    {
+      "id": 1,
+      "name": "AirPods Pro (2nd generation)",
+      "brand": "Apple",
+      "price": 279,
+      "description": "AirPods Pro con cancelación activa de ruido y audio espacial personalizado",
+      "images": [
+        "/images/airpods-pro-2-1.jpg",
+        "/images/airpods-pro-2-2.jpg", 
+        "/images/airpods-pro-2-3.jpg"
+      ],
+      "features": [
+        "Cancelación activa de ruido",
+        "Audio espacial personalizado",
+        "Resistencia al agua IPX4",
+        "Hasta 6 horas de audio",
+        "Carga inalámbrica"
+      ],
+      "inStock": true,
+      "rating": 4.8,
+      "category": "premium"
+    },
+    {
+      "id": 2,
+      "name": "AirPods Max",
+      "brand": "Apple",
+      "price": 599,
+      "description": "Auriculares over-ear con cancelación activa de ruido y audio de alta fidelidad",
+      "images": [
+        "/images/airpods-max-1.jpg",
+        "/images/airpods-max-2.jpg",
+        "/images/airpods-max-3.jpg"
+      ],
+      "features": [
+        "Cancelación activa de ruido",
+        "Audio de alta fidelidad",
+        "Hasta 20 horas de audio",
+        "Carga rápida",
+        "Diseño premium"
+      ],
+      "inStock": true,
+      "rating": 4.7,
+      "category": "premium"
+    },
+    {
+      "id": 3,
+      "name": "Sony WH-1000XM5",
+      "brand": "Sony",
+      "price": 399,
+      "description": "Auriculares inalámbricos con la mejor cancelación de ruido del mercado",
+      "images": [
+        "/images/sony-wh1000xm5-1.jpg",
+        "/images/sony-wh1000xm5-2.jpg",
+        "/images/sony-wh1000xm5-3.jpg"
+      ],
+      "features": [
+        "Cancelación de ruido líder",
+        "30 horas de batería",
+        "Carga rápida 3 minutos = 3 horas",
+        "Audio de alta resolución",
+        "Control táctil intuitivo"
+      ],
+      "inStock": true,
+      "rating": 4.9,
+      "category": "premium"
+    },
+    {
+      "id": 4,
+      "name": "Bose QuietComfort Earbuds II",
+      "brand": "Bose",
+      "price": 299,
+      "description": "Auriculares inalámbricos con cancelación de ruido adaptativa",
+      "images": [
+        "/images/bose-qc-eb2-1.jpg",
+        "/images/bose-qc-eb2-2.jpg",
+        "/images/bose-qc-eb2-3.jpg"
+      ],
+      "features": [
+        "Cancelación de ruido adaptativa",
+        "Audio personalizado",
+        "Hasta 6 horas de audio",
+        "Resistencia al agua IPX4",
+        "Carga inalámbrica"
+      ],
+      "inStock": true,
+      "rating": 4.6,
+      "category": "premium"
+    },
+    {
+      "id": 5,
+      "name": "Sennheiser Momentum True Wireless 3",
+      "brand": "Sennheiser",
+      "price": 249,
+      "description": "Auriculares inalámbricos con sonido de alta fidelidad",
+      "images": [
+        "/images/sennheiser-mtw3-1.jpg",
+        "/images/sennheiser-mtw3-2.jpg",
+        "/images/sennheiser-mtw3-3.jpg"
+      ],
+      "features": [
+        "Sonido de alta fidelidad",
+        "Cancelación de ruido activa",
+        "Hasta 7 horas de audio",
+        "Carga inalámbrica",
+        "Diseño premium"
+      ],
+      "inStock": true,
+      "rating": 4.7,
+      "category": "premium"
+    },
+    {
+      "id": 6,
+      "name": "Jabra Elite 7 Pro",
+      "brand": "Jabra",
+      "price": 199,
+      "description": "Auriculares inalámbricos para profesionales con micrófono avanzado",
+      "images": [
+        "/images/jabra-elite7pro-1.jpg",
+        "/images/jabra-elite7pro-2.jpg",
+        "/images/jabra-elite7pro-3.jpg"
+      ],
+      "features": [
+        "Micrófono avanzado",
+        "Cancelación de ruido activa",
+        "Hasta 8 horas de audio",
+        "Resistencia al agua IPX7",
+        "Carga inalámbrica"
+      ],
+      "inStock": true,
+      "rating": 4.5,
+      "category": "professional"
+    }
+  ]
+}
+

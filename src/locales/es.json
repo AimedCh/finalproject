@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "airpods": "AirPods",
+    "rentals": "Alquileres",
+    "workshop": "Taller",
+    "contact": "Contacto"
+  },
+  "home": {
+    "hero": {
+      "title": "Hola, soy Aimed Dine Chebili",
+      "subtitle": "Desarrollador Full Stack y Emprendedor Multidisciplinario",
+      "description": "A los 20 años, he construido un ecosistema de negocios que abarca desde tecnología de audio hasta alojamientos turísticos y diagnóstico automotriz. Mi pasión es crear soluciones que conecten la innovación tecnológica con las necesidades reales de las personas.",
+      "cta": "Descubre mi historia",
+      "highlight": "Disponible para nuevos proyectos y colaboraciones"
+    },
+    "about": {
+      "title": "Quién soy",
+      "biography": "Emprendedor multidisciplinario con pasión por la tecnología y el aprendizaje continuo. Especializado en desarrollo web, tecnología Apple, gestión de alojamientos y automoción. Mi enfoque se centra en ofrecer servicios de calidad y construir relaciones de confianza con mis clientes, combinando innovación tecnológica con experiencia práctica en diferentes sectores.",
+      "mission": "Mi misión es combinar la innovación tecnológica con el servicio personalizado, creando soluciones que realmente marquen la diferencia en la vida de las personas.",
+      "values": {
+        "title": "Mis valores",
+        "trust": "Confianza",
+        "innovation": "Innovación",
+        "quality": "Calidad",
+        "closeness": "Cercanía",
+        "responsibility": "Responsabilidad",
+        "growth": "Crecimiento continuo"
+      },
+      "timeline": {
+        "title": "Mi trayectoria",
+        "start": "2019 - Inicio como entrenador canino",
+        "automotive": "2022 - Especialización en diagnóstico automotriz",
+        "rentals": "2020 - Gestión de alquileres en Mostaganem",
+        "tech": "2023 - Formación en Desarrollo Web",
+        "airpods": "2024 - AirPods Alicante",
+        "future": "2025 - Expansión digital y nuevos proyectos"
+      },
+      "languages": {
+        "title": "Idiomas",
+        "subtitle": "Comunicación multicultural y global"
+      },
+      "skills": {
+        "title": "Habilidades Técnicas",
+        "subtitle": "Tecnologías y herramientas que domino"
+      },
+      "experience": {
+        "title": "Experiencia Profesional",
+        "subtitle": "Mi trayectoria emprendedora y profesional"
+      },
+      "education": {
+        "title": "Formación Académica",
+        "subtitle": "Educación continua y especialización"
+      },
+      "cta": {
+        "title": "¿Trabajamos juntos?",
+        "subtitle": "Estoy siempre abierto a nuevos proyectos y colaboraciones. ¡Hablemos sobre tu próxima idea!",
+        "contact": "Contactar Ahora",
+        "services": "Ver Servicios"
+      }
+    },
+    "services": {
+      "title": "Mis servicios",
+      "subtitle": "Tres pilares de mi ecosistema empresarial",
+      "airpods": {
+        "title": "AirPods Alicante",
+        "description": "Tienda especializada en auriculares inalámbricos premium. Ofrecemos AirPods originales de Apple y las mejores marcas del mercado con garantía oficial, soporte técnico personalizado y envío gratuito.",
+        "features": [
+          "Productos originales",
+          "Garantía oficial",
+          "Soporte 24/7",
+          "Envío gratuito"
+        ]
+      },
+      "rentals": {
+        "title": "Alquileres Mostaganem",
+        "description": "Gestión de 4 apartamentos vacacionales en Mostaganem, Argelia, a solo 500 metros de la playa. Ofrecemos estancias cómodas y memorables con atención personalizada.",
+        "features": [
+          "4 apartamentos disponibles",
+          "500m de la playa",
+          "Precio fijo 50€/día",
+          "Gestión personalizada"
+        ]
+      },
+      "workshop": {
+        "title": "Aimed Diag Solutions",
+        "description": "Taller especializado en diagnóstico automotriz avanzado en Birtouta, Argelia. Trabajamos con las mejores herramientas del mercado para resolver problemas complejos en vehículos Volkswagen, Renault y otras marcas.",
+        "features": [
+          "Diagnóstico avanzado",
+          "Herramientas profesionales",
+          "Múltiples marcas",
+          "Soluciones personalizadas"
+        ]
+      }
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros clientes"
+    },
+    "cta": {
+      "discover": "Descubre mis servicios",
+      "contact": "Contáctame"
+    }
+  },
+  "airpods": {
+    "hero": {
+      "title": "AirPods Alicante - Tu tienda de confianza para los mejores AirPods en Alicante",
+      "description": "AirPods Max Pro, AirPods 4, AirPods 3 con garantía Apple, envío gratis, soporte 24/7"
+    },
+    "products": {
+      "title": "Productos destacados"
+    },
+    "features": {
+      "title": "Características"
+    },
+    "testimonials": {
+      "title": "Testimonios"
+    },
+    "cta": {
+      "buy": "Comprar ahora"
+    }
+  },
+  "rentals": {
+    "hero": {
+      "title": "Alquileres de verano en Mostaganem",
+      "description": "4 apartamentos, 50€ por día, 500m de la playa"
+    },
+    "apartments": {
+      "title": "Nuestros apartamentos"
+    },
+    "booking": {
+      "title": "Reserva tu apartamento",
+      "nights": "Noches",
+      "total": "Total",
+      "book": "Reservar"
+    },
+    "location": {
+      "title": "Ubicación"
+    },
+    "policy": {
+      "title": "Política de cancelación"
+    }
+  },
+  "workshop": {
+    "hero": {
+      "title": "Aimed Diag Solutions",
+      "description": "Diagnóstico y mecánica avanzada"
+    },
+    "basic": {
+      "title": "Servicios básicos",
+      "services": [
+        "Lecture/effacement DTC",
+        "Remise à zéro vidange/service",
+        "Lecture km réel",
+        "Diagnostic ABS/Airbag"
+      ]
+    },
+    "advanced": {
+      "title": "Servicios avanzados",
+      "services": [
+        "Clés/immo",
+        "Réparation UCH/BSI/compteurs",
+        "Reset crash airbag",
+        "Clonage ECU/BSI",
+        "Reprogrammation moteur"
+      ]
+    },
+    "mechanics": {
+      "title": "Mecánica",
+      "services": ["Amortisseurs", "Rotules", "Parallélisme", "Suspensiones"]
+    },
+    "tools": {
+      "title": "Herramientas",
+      "basic": ["Renault CLIP", "VCDS", "Launch X431", "Delphi/Autocom"],
+      "advanced": [
+        "Kess/Ktag",
+        "Autotuner",
+        "Flex",
+        "CMD",
+        "FGTech",
+        "UPA",
+        "VVDI",
+        "Orange5",
+        "Xprog"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "send": "Enviar"
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "close": "Cerrar"
+  }
+}

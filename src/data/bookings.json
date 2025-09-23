@@ -1,0 +1,41 @@
+{
+  "bookings": [
+    {
+      "id": 1,
+      "apartmentId": 1,
+      "guestName": "María García",
+      "guestEmail": "maria.garcia@email.com",
+      "checkIn": "2024-07-15",
+      "checkOut": "2024-07-20",
+      "nights": 5,
+      "totalPrice": 250,
+      "status": "confirmed",
+      "createdAt": "2024-06-01T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "apartmentId": 2,
+      "guestName": "Jean Dupont",
+      "guestEmail": "jean.dupont@email.com",
+      "checkIn": "2024-08-01",
+      "checkOut": "2024-08-05",
+      "nights": 4,
+      "totalPrice": 200,
+      "status": "confirmed",
+      "createdAt": "2024-06-15T14:20:00Z"
+    },
+    {
+      "id": 3,
+      "apartmentId": 3,
+      "guestName": "John Smith",
+      "guestEmail": "john.smith@email.com",
+      "checkIn": "2024-07-25",
+      "checkOut": "2024-08-01",
+      "nights": 7,
+      "totalPrice": 350,
+      "status": "pending",
+      "createdAt": "2024-06-20T09:15:00Z"
+    }
+  ]
+}
+
