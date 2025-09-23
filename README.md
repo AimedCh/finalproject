@@ -2,7 +2,6 @@
 
 Una plataforma completa que combina tres servicios especializados: **AirPods Store**, **Alquileres de Verano** y **Taller Automotriz**. Desarrollado por Aimed Dine Chebili como un proyecto integral que demuestra habilidades en desarrollo full-stack moderno.
 
-## 🆕 Últimas Actualizaciones (Diciembre 2024)
 
 - ✅ **Sistema de Cookies GDPR Compliant** - Banner de consentimiento con preferencias granulares
 - ✅ **Imágenes Optimizadas** - Todas las imágenes de alquileres ahora cargan correctamente
