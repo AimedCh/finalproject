@@ -310,7 +310,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 **Aimed Dine Chebili**
 - 📧 Email: chebiliaimed9@gmail.com
-- 💼 LinkedIn: [aimed-dinechebili](https://www.linkedin.com/in/aimed-dine-chebili-/)
+- 💼 LinkedIn: [aimed-dine-chebili-](https://www.linkedin.com/in/aimed-dine-chebili-/)
 - 🐙 GitHub: [AimedCh](https://github.com/AimedCh)
 
 ## 🙏 Agradecimientos
