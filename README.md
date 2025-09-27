@@ -491,6 +491,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 ---
 
 ⭐ **¡Si te gusta este proyecto, no olvides darle una estrella!** ⭐
+<<<<<<< HEAD
 
 ## 📞 Soporte
 
@@ -498,3 +499,5 @@ Para soporte técnico o preguntas sobre el proyecto:
 - 📧 Email: chebiliaimed9@gmail.com
 - 🐛 Issues: [GitHub Issues](https://github.com/AimedCh/finalproject/issues)
 - 📖 Documentación: Este README y comentarios en el código
+=======
+>>>>>>> 596f92b6c7597c12d559ad4fd6a4dc65743634d4
