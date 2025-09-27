@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import { contactAPI } from '../services/api';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -28,13 +29,20 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Here you would typically send the data to your backend API
-      console.log('Form submitted:', formData);
-      
-      setSubmitStatus('success');
+      // Send to Laravel public endpoint via Vite proxy
+      const res = await contactAPI.sendPublic({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        service: formData.service,
+      });
+      if (res?.success) {
+        setSubmitStatus('success');
+      } else {
+        setSubmitStatus('error');
+      }
       setFormData({
         name: '',
         email: '',

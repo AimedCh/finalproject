@@ -25,6 +25,19 @@ interface Product {
   reviews?: any[];
 }
 
+interface OrderData {
+  productId: number;
+  quantity: number;
+  customerName: string;
+  customerEmail: string;
+  customerPhone: string;
+  shippingAddress: string;
+  city: string;
+  postalCode: string;
+  country: string;
+  notes?: string;
+}
+
 interface CartItem {
   id: number;
   name: string;
@@ -229,6 +242,42 @@ const AirPods: React.FC = () => {
 
   const handleLearnMore = () => {
     // Future implementation for product details modal
+  };
+
+  const handleOrder = async (orderData: OrderData) => {
+    try {
+      // Create order data for backend
+      const orderPayload = {
+        airpods_id: orderData.productId,
+        quantity: orderData.quantity,
+        customer_name: orderData.customerName,
+        customer_email: orderData.customerEmail,
+        customer_phone: orderData.customerPhone,
+        shipping_address: `${orderData.shippingAddress}, ${orderData.city}, ${orderData.postalCode}, ${orderData.country}`,
+        payment_method: 'contra_reembolso',
+        notes: orderData.notes || '',
+        total_amount: (products.find(p => p.id === orderData.productId)?.price || 0) * orderData.quantity + 3.50 // Add shipping cost
+      };
+
+      // Send to backend
+      const response = await fetch('/backend/airpods/order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderPayload)
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(`¡Orden confirmada! Número de pedido: ${result.order_number || result.id}`);
+      } else {
+        throw new Error('Error al procesar la orden');
+      }
+    } catch (error) {
+      console.error('Error submitting order:', error);
+      alert('Error al procesar la orden. Por favor, inténtalo de nuevo.');
+    }
   };
 
   const totalCartItems = cartItems.reduce(
@@ -634,6 +683,7 @@ const AirPods: React.FC = () => {
                     product={product}
                     onAddToCart={addToCart}
                     onLearnMore={handleLearnMore}
+                    onOrder={handleOrder}
                   />
                 </motion.div>
               ))}
@@ -1192,6 +1242,7 @@ const AirPods: React.FC = () => {
                     </h3>
                     <PayPalCheckout
                       amount={subtotal}
+                      cartItems={cartItems}
                       onSuccess={handlePayPalSuccess}
                       onError={handlePayPalError}
                     />

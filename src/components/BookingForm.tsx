@@ -42,7 +42,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ apartment, onClose }) => {
   });
   const [nights, setNights] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [paymentMethod, setPaymentMethod] = useState('card');
   const [isProcessing, setIsProcessing] = useState(false);
 
   const calculateNights = (checkIn: string, checkOut: string) => {
@@ -74,13 +73,56 @@ const BookingForm: React.FC<BookingFormProps> = ({ apartment, onClose }) => {
     e.preventDefault();
     setIsProcessing(true);
     
-    // Simular procesamiento de pago
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Aquí se integraría con un sistema de pago real como Stripe
-    alert('¡Reserva confirmada y pago procesado con éxito! Te contactaremos pronto.');
-    setIsProcessing(false);
-    onClose();
+    try {
+      // Enviar datos al backend Laravel
+      const response = await fetch('/backend/alquileres/reserve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          nombre_cliente: formData.name,
+          email_cliente: formData.email,
+          telefono_cliente: formData.phone,
+          numero_huespedes: formData.guests,
+          tipo_equipo: apartment.name,
+          descripcion_equipo: apartment.description,
+          fecha_entrada: formData.checkIn,
+          fecha_salida: formData.checkOut,
+          precio_dia: apartment.price
+        })
+      });
+
+      const result = await response.json();
+      
+      console.log('Response status:', response.status);
+      console.log('Response data:', result);
+      
+      if (response.ok) {
+        alert('¡Reserva confirmada exitosamente! Te contactaremos pronto.');
+        onClose();
+      } else {
+        console.error('Error response:', result);
+        
+        // Manejar errores específicos de disponibilidad
+        if (response.status === 409 && result.error === 'availability_conflict') {
+          const errorMessage = result.message || 'La habitación no está disponible para las fechas seleccionadas.';
+          throw new Error(errorMessage);
+        }
+        
+        // Manejar otros errores de validación
+        const errorMessage = result.errors ? 
+          Object.values(result.errors).flat().join(', ') : 
+          result.message || 'Error al procesar la reserva';
+        throw new Error(errorMessage);
+      }
+    } catch (error) {
+      console.error('Error en la reserva:', error);
+      alert(`Error al procesar la reserva: ${error.message}. Por favor, inténtalo de nuevo.`);
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   return (
@@ -245,37 +287,21 @@ const BookingForm: React.FC<BookingFormProps> = ({ apartment, onClose }) => {
               </div>
             )}
 
-            {/* Payment Method */}
+            {/* Información sobre el proceso de reserva */}
             {nights > 0 && (
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Método de pago
-                </label>
-                <div className="grid grid-cols-2 gap-4">
-                  <button
-                    type="button"
-                    onClick={() => setPaymentMethod('card')}
-                    className={`p-4 border-2 rounded-lg text-center ${
-                      paymentMethod === 'card' 
-                        ? 'border-primary-500 bg-primary-50' 
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
-                  >
-                    <div className="text-2xl mb-2">💳</div>
-                    <div className="text-sm font-medium">Tarjeta</div>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setPaymentMethod('paypal')}
-                    className={`p-4 border-2 rounded-lg text-center ${
-                      paymentMethod === 'paypal' 
-                        ? 'border-primary-500 bg-primary-50' 
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
-                  >
-                    <div className="text-2xl mb-2">🅿️</div>
-                    <div className="text-sm font-medium">PayPal</div>
-                  </button>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <div className="text-blue-500 text-xl">ℹ️</div>
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="text-sm font-medium text-blue-800">
+                      Proceso de Reserva
+                    </h4>
+                    <p className="text-sm text-blue-700 mt-1">
+                      Esta es una reserva sin pago online. Te contactaremos para confirmar los detalles y coordinar el pago.
+                    </p>
+                  </div>
                 </div>
               </div>
             )}
@@ -292,7 +318,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ apartment, onClose }) => {
                     Procesando...
                   </div>
                 ) : (
-                  `Reservar por €${totalPrice}`
+                  `Confirmar Reserva - €${totalPrice}`
                 )}
               </button>
               <button 

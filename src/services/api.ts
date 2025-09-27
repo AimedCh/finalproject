@@ -2,10 +2,20 @@ import axios from 'axios';
 import { getCookie, setCookie, deleteCookie } from '../utils/cookies';
 
 const API_BASE_URL = 'http://127.0.0.1:8000/api';
+const PUBLIC_BASE_URL = '';
 
 // Create axios instance
 const api = axios.create({
   baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+  },
+});
+
+// Public (non-/api) axios instance for web routes like /contacto/public
+const publicApi = axios.create({
+  baseURL: PUBLIC_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -209,6 +219,37 @@ export const workshopAPI = {
 
   updateAppointmentStatus: async (id: string, statusData: any) => {
     const response = await api.put(`/workshop/appointments/${id}/status`, statusData);
+    return response.data;
+  },
+};
+
+// Contact API (uses public web route, not under /api)
+export const contactAPI = {
+  sendPublic: async (data: {
+    name: string;
+    email: string;
+    phone?: string;
+    subject: string;
+    message: string;
+    service?: string;
+  }) => {
+    const serviceMap: Record<string, string> = {
+      rentals: 'alquileres',
+      workshop: 'taller',
+      airpods: 'airpods',
+      general: 'general',
+    };
+    const normalizedService = data.service ? (serviceMap[data.service] || 'general') : 'general';
+    const payload = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone || '',
+      subject: data.subject,
+      message: data.service ? `${data.message}\n\n[Servicio: ${normalizedService}]` : data.message,
+      service: normalizedService,
+    };
+    // Use Vite proxy '/backend' -> http://127.0.0.1:8000 (see vite.config.ts)
+    const response = await publicApi.post('/backend/contacto/public', payload);
     return response.data;
   },
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import OrderForm from './OrderForm';
 
 interface Product {
   id: number;
@@ -15,19 +16,35 @@ interface Product {
   reviews?: any[];
 }
 
+interface OrderData {
+  productId: number;
+  quantity: number;
+  customerName: string;
+  customerEmail: string;
+  customerPhone: string;
+  shippingAddress: string;
+  city: string;
+  postalCode: string;
+  country: string;
+  notes?: string;
+}
+
 interface ProductCardProps {
   product: Product;
   onAddToCart: (product: Product) => void;
   onLearnMore: (product: Product) => void;
+  onOrder: (orderData: OrderData) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onLearnMore }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onLearnMore, onOrder }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isOrderFormOpen, setIsOrderFormOpen] = useState(false);
 
   const isInStock = product.stock > 0;
   const price = product.price;
 
   return (
+    <>
     <motion.div
       className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
       whileHover={{ y: -8 }}
@@ -107,13 +124,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onLearn
         {/* Action Buttons */}
         <div className="space-y-3">
           <motion.button
-            onClick={() => onAddToCart(product)}
+            onClick={() => setIsOrderFormOpen(true)}
             className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
             disabled={!isInStock}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            {isInStock ? 'Comprar' : 'Agotado'}
+            {isInStock ? 'Ordenar' : 'Agotado'}
           </motion.button>
           
           <motion.button
@@ -126,6 +143,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onLearn
         </div>
     </div>
     </motion.div>
+
+    {/* Order Form Modal */}
+    <OrderForm
+      product={product}
+      isOpen={isOrderFormOpen}
+      onClose={() => setIsOrderFormOpen(false)}
+      onSubmit={onOrder}
+    />
+    </>
   );
 };
 
