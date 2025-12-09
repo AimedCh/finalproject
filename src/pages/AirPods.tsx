@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { assetUrl } from "../utils/assetUrl";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import ProductCard from "../components/ProductCard";
 import ShoppingCart from "../components/ShoppingCart";
 import PayPalCheckout from "../components/PayPalCheckout";
 import OrderTracking from "../components/OrderTracking";
+import OrderConfirmation from "../components/OrderConfirmation";
 import LoginModal from "../components/LoginModal";
 import { productsAPI } from "../services/api";
 import { useAuth } from "../contexts/AuthContext";
@@ -56,6 +58,14 @@ const AirPods: React.FC = () => {
   const [purchaseSuccess, setPurchaseSuccess] = useState(false);
   const [activeCategory, setActiveCategory] = useState("all");
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [isConfirmationOpen, setIsConfirmationOpen] = useState(false);
+  const [orderConfirmation, setOrderConfirmation] = useState({
+    trackingCode: '',
+    totalAmount: 0,
+    customerName: '',
+    productName: '',
+    quantity: 1,
+  });
   const { showBanner } = useCookieConsent();
 
   const { user, isAuthenticated, logout } = useAuth();
@@ -88,7 +98,7 @@ const AirPods: React.FC = () => {
             price: 25.00,
             description:
               "Audio espacial personalizado y hasta 5 horas de autonomía.",
-            image: "/img/imgAirPods/airpods4.jpeg",
+            image: assetUrl("img/imgAirPods/airpods4.jpeg"),
             category: "airpods",
             stock: 50,
             features: [
@@ -108,7 +118,7 @@ const AirPods: React.FC = () => {
             price: 25.00,
             description:
               "Cancelación activa de ruido y audio adaptativo con modo ambiente.",
-            image: "/img/imgAirPods/airpods43.jpeg",
+            image: assetUrl("img/imgAirPods/airpods43.jpeg"),
             category: "airpods",
             stock: 30,
             features: [
@@ -128,7 +138,7 @@ const AirPods: React.FC = () => {
             price: 30.00,
             description:
               "Cancelación activa de ruido 4x superior con medición de frecuencia cardiaca.",
-            image: "/img/imgAirPods/airpodspro3.jpeg",
+            image: assetUrl("img/imgAirPods/airpodspro3.jpeg"),
             category: "airpods",
             stock: 25,
             features: [
@@ -148,7 +158,7 @@ const AirPods: React.FC = () => {
             price: 35.00,
             description:
               "Cancelación activa de ruido profesional y audio espacial personalizado.",
-            image: "/img/imgAirPods/airpodsmax.png",
+            image: assetUrl("img/imgAirPods/airpodsmax.png"),
             category: "airpods",
             stock: 15,
             features: [
@@ -246,6 +256,10 @@ const AirPods: React.FC = () => {
 
   const handleOrder = async (orderData: OrderData) => {
     try {
+      // Get product details
+      const product = products.find(p => p.id === orderData.productId);
+      const totalAmount = (product?.price || 0) * orderData.quantity + 3.50;
+
       // Create order data for backend
       const orderPayload = {
         airpods_id: orderData.productId,
@@ -256,7 +270,7 @@ const AirPods: React.FC = () => {
         shipping_address: `${orderData.shippingAddress}, ${orderData.city}, ${orderData.postalCode}, ${orderData.country}`,
         payment_method: 'contra_reembolso',
         notes: orderData.notes || '',
-        total_amount: (products.find(p => p.id === orderData.productId)?.price || 0) * orderData.quantity + 3.50 // Add shipping cost
+        total_amount: totalAmount
       };
 
       // Send to backend
@@ -270,7 +284,16 @@ const AirPods: React.FC = () => {
 
       if (response.ok) {
         const result = await response.json();
-        alert(`¡Orden confirmada! Número de pedido: ${result.order_number || result.id}`);
+
+        // Show confirmation modal with tracking code
+        setOrderConfirmation({
+          trackingCode: result.order_number || result.purchase_number || 'N/A',
+          totalAmount: totalAmount,
+          customerName: orderData.customerName,
+          productName: product?.name || 'AirPods',
+          quantity: orderData.quantity,
+        });
+        setIsConfirmationOpen(true);
       } else {
         throw new Error('Error al procesar la orden');
       }
@@ -325,7 +348,7 @@ const AirPods: React.FC = () => {
               >
                 <Link to="/" className="flex items-center space-x-2">
                   <img
-                    src="/img/imgAirPods/airlogo.png"
+                    src={assetUrl("img/imgAirPods/airlogo.png")}
                     alt="Apple Logo"
                     className="w-8 h-8"
                   />
@@ -381,6 +404,38 @@ const AirPods: React.FC = () => {
 
               {/* Auth & Cart Section */}
               <div className="flex items-center space-x-4">
+                {/* Tracking Button - Premium Design */}
+                <motion.button
+                  onClick={() => setIsTrackingOpen(true)}
+                  className="relative px-6 py-2.5 rounded-full text-sm font-semibold text-white overflow-hidden group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  title="Rastrear tu pedido"
+                >
+                  {/* Gradient Background - Dark Gray/Black with Blue accent */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 opacity-100 group-hover:opacity-90 transition-opacity" />
+
+                  {/* Blue accent overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-600/10 to-blue-600/0 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                  {/* Animated Border */}
+                  <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-500 via-slate-600 to-blue-500 bg-clip-border opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/15 to-white/0 opacity-0 group-hover:opacity-100 animate-pulse" />
+
+                  {/* Content */}
+                  <div className="relative flex items-center space-x-2">
+                    <motion.span
+                      animate={{ y: [0, -2, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      📦
+                    </motion.span>
+                    <span>Seguimiento</span>
+                  </div>
+                </motion.button>
+
                 {/* Login/Logout Button */}
                 <motion.button
                   onClick={handleAuthAction}
@@ -403,39 +458,79 @@ const AirPods: React.FC = () => {
                   )}
                 </motion.button>
 
-                {/* Cart Icon */}
+                {/* Cart Icon - Premium Design */}
                 <motion.button
-                  className="relative p-2 text-gray-600 hover:text-gray-900 transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="relative group"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.9 }}
                   onClick={() => setIsCartOpen(true)}
                 >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
+                  {/* Outer Glow - Animated */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-blue-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl animate-pulse" />
+
+                  {/* Main Container with Gradient Border */}
+                  <div className="relative p-3 rounded-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-slate-700 group-hover:border-blue-500/50 transition-all duration-300 shadow-lg group-hover:shadow-blue-500/20">
+                    {/* Subtle Inner Glow */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    {/* Icon - Shopping Cart with Grid */}
+                    <svg
+                      className="w-6 h-6 text-slate-300 group-hover:text-blue-400 transition-colors duration-300 relative z-10"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01"
-                    />
-                  </svg>
+                    >
+                      {/* Handle */}
+                      <path d="M2 3H4L6 15C6.2 16.1 7.2 16.9 8.4 16.9H18C19.1 16.9 20 16.1 20.2 15L22 6H5" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+
+                      {/* Cart basket grid - vertical lines */}
+                      <line x1="8" y1="8" x2="8" y2="14" stroke="currentColor" strokeWidth="1"/>
+                      <line x1="11" y1="8" x2="11" y2="14" stroke="currentColor" strokeWidth="1"/>
+                      <line x1="14" y1="8" x2="14" y2="14" stroke="currentColor" strokeWidth="1"/>
+                      <line x1="17" y1="8" x2="17" y2="14" stroke="currentColor" strokeWidth="1"/>
+
+                      {/* Cart basket grid - horizontal lines */}
+                      <line x1="7" y1="10" x2="18" y2="10" stroke="currentColor" strokeWidth="1"/>
+                      <line x1="7" y1="12" x2="18" y2="12" stroke="currentColor" strokeWidth="1"/>
+
+                      {/* Left wheel */}
+                      <circle cx="9" cy="19" r="1" fill="currentColor"/>
+                      {/* Right wheel */}
+                      <circle cx="16" cy="19" r="1" fill="currentColor"/>
+                    </svg>
+                  </div>
+
+                  {/* Premium Animated Badge */}
                   {totalCartItems > 0 && (
-                    <motion.span
-                      className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
+                    <motion.div
+                      className="absolute -top-3 -right-3"
+                      initial={{ scale: 0, rotate: -180 }}
+                      animate={{ scale: 1, rotate: 0 }}
                       transition={{
                         type: "spring",
-                        stiffness: 500,
-                        damping: 15,
+                        stiffness: 600,
+                        damping: 12,
                       }}
                     >
-                      {totalCartItems}
-                    </motion.span>
+                      <div className="relative">
+                        {/* Outer Glow Ring */}
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-lg opacity-60"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        />
+
+                        {/* Badge Container */}
+                        <div className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-purple-600 text-white text-xs font-bold rounded-full w-7 h-7 flex items-center justify-center border-2 border-white shadow-xl">
+                          {/* Shine Effect */}
+                          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                          {/* Number */}
+                          <span className="relative z-10">{totalCartItems}</span>
+                        </div>
+                      </div>
+                    </motion.div>
                   )}
                 </motion.button>
               </div>
@@ -452,7 +547,7 @@ const AirPods: React.FC = () => {
             loop
             playsInline
           >
-            <source src="/img/imgAirPods/fourk.mp4" type="video/mp4" />
+            <source src={assetUrl("img/imgAirPods/fourk.mp4")} type="video/mp4" />
             Tu navegador no soporta videos HTML5.
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -509,7 +604,7 @@ const AirPods: React.FC = () => {
                 <div className="text-center mb-6">
                   <div className="w-16 h-16  rounded-full flex items-center justify-center mx-auto mb-4">
                   <img
-  src="/img/imgAirPods/airlogo.png"
+  src={assetUrl("img/imgAirPods/airlogo.png")}
   alt="Apple Logo"
   className="w-16 h-16 object-contain"
 />
@@ -576,7 +671,7 @@ const AirPods: React.FC = () => {
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <img
-                      src="/img/imgAirPods/applelogo.png"
+                      src={assetUrl("img/imgAirPods/applelogo.png")}
                       alt="Apple Logo"
                       className="w-10 h-10"
                     />
@@ -716,28 +811,28 @@ const AirPods: React.FC = () => {
                   name: "Fundas de Silicona",
                   price: 5,
                   description: "Protección suave y cómoda para tus AirPods",
-                  image: "/img/imgAirPods/funda.png",
+                  image: assetUrl("img/imgAirPods/funda.png"),
                   colors: ["Negro", "Blanco", "Rosa", "Azul"],
                 },
                 {
                   name: "Cargador Inalámbrico",
                   price: 8,
                   description: "Carga rápida y eficiente para tu estuche",
-                  image: "/img/imgAirPods/cargador.png",
+                  image: assetUrl("img/imgAirPods/cargador.png"),
                   colors: ["Blanco", "Negro"],
                 },
                 {
                   name: "Cables Lightning",
                   price: 6,
                   description: "Cables originales para carga rápida",
-                  image: "/img/imgAirPods/cablelighting.png",
+                  image: assetUrl("img/imgAirPods/cablelighting.png"),
                   colors: ["Blanco", "Negro"],
                 },
                 {
                   name: "Adaptadores USB-C",
                   price: 4,
                   description: "Adaptadores para dispositivos modernos",
-                  image: "/img/imgAirPods/adaptator.png",
+                  image: assetUrl("img/imgAirPods/adaptator.png"),
                   colors: ["Blanco"],
                 },
               ].map((accessory, index) => (
@@ -1038,7 +1133,7 @@ const AirPods: React.FC = () => {
             >
               <div className="bg-white rounded-2xl shadow-lg p-6 max-w-4xl w-full">
                 <img
-                  src="/img/imgAirPods/valoraciones.png"
+                  src={assetUrl("img/imgAirPods/valoraciones.png")}
                   alt="Valoraciones reales de clientes en Milanuncios - 4.4 estrellas con 72 valoraciones"
                   className="w-full h-auto rounded-xl"
                 />
@@ -1306,6 +1401,17 @@ const AirPods: React.FC = () => {
             </motion.div>
           </div>
         )}
+
+        {/* Order Confirmation */}
+        <OrderConfirmation
+          isOpen={isConfirmationOpen}
+          onClose={() => setIsConfirmationOpen(false)}
+          trackingCode={orderConfirmation.trackingCode}
+          totalAmount={orderConfirmation.totalAmount}
+          customerName={orderConfirmation.customerName}
+          productName={orderConfirmation.productName}
+          quantity={orderConfirmation.quantity}
+        />
 
         {/* Order Tracking */}
         <OrderTracking

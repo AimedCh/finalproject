@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { assetUrl } from "../utils/assetUrl";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import ApartmentCard from "../components/ApartmentCard";
 import BookingForm from "../components/BookingForm";
 import destinationsData from "../data/destinations.json";
-import { rentalsAPI } from "../services/api";
 
 interface Apartment {
   id: number;
@@ -31,11 +31,7 @@ interface Apartment {
 }
 
 const Rentals: React.FC = () => {
-  const [apartments, setApartments] = useState<Apartment[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedApartment, setSelectedApartment] = useState<Apartment | null>(
-    null
-  );
+  const [selectedApartment, setSelectedApartment] = useState<Apartment | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const handleCategoryClick = (categoryId: string) => {
@@ -50,45 +46,12 @@ const Rentals: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    const fetchApartments = async () => {
-      try {
-        console.log('Fetching apartments from API...');
-        const response = await rentalsAPI.getApartments();
-        console.log('Rentals API Response:', response);
-        if (response.success) {
-          console.log('Setting apartments:', response.data);
-          setApartments(response.data);
-          setLoading(false);
-          return;
-        }
-      } catch (error) {
-        console.error("Error loading apartments:", error);
-      }
-
-      // Fallback to mock data
-      setTimeout(() => {
-        fetch("/src/data/rentals.json")
-          .then((response) => response.json())
-          .then((data) => {
-            setApartments(data.apartments);
-            setLoading(false);
-          })
-          .catch(() => {
-          // Datos mock mejorados con imágenes locales
-          console.log('Setting mock apartments with images...');
-          console.log('Image paths being used:', [
-            "/img/imgAlquieres/habitacion1.png",
-            "/img/imgAlquieres/habitacion2.png",
-            "/img/imgAlquieres/habitacion3.png",
-            "/img/imgAlquieres/habitacion4.png"
-          ]);
-          setApartments([
+  // Pre-defined apartments data for instant loading
+  const mockApartments: Apartment[] = [
             {
               id: 1,
               name: "Apartamento Playa Dorada",
-              description:
-                "Apartamento moderno con vista al mar, perfecto para familias",
+      description: "Apartamento moderno con vista al mar, perfecto para familias",
               address: "Calle de la Playa, 123",
               city: "Mostaganem",
               price: 50,
@@ -98,11 +61,11 @@ const Rentals: React.FC = () => {
               bathrooms: 1,
               amenities: ["WiFi", "Kitchen", "Parking"],
               images: [
-                "/img/imgAlquieres/habitacion1.png",
-                "/img/imgAlquieres/habitacion1.png",
-                "/img/imgAlquieres/habitacion1.png",
+                assetUrl("img/imgAlquieres/habitacion1.png"),
+                assetUrl("img/imgAlquieres/habitacion1.png"),
+                assetUrl("img/imgAlquieres/habitacion1.png"),
               ],
-              image: "/img/imgAlquieres/habitacion1.png",
+              image: assetUrl("img/imgAlquieres/habitacion1.png"),
               features: [
                 "2 habitaciones",
                 "1 baño",
@@ -117,14 +80,13 @@ const Rentals: React.FC = () => {
             {
               id: 2,
               name: "Estudio Marina",
-              description:
-                "Estudio acogedor ideal para parejas, a solo 200m de la playa",
+      description: "Estudio acogedor ideal para parejas, a solo 200m de la playa",
               price: 50,
-              image: "/img/imgAlquieres/habitacion2.png",
+              image: assetUrl("img/imgAlquieres/habitacion2.png"),
               images: [
-                "/img/imgAlquieres/habitacion2.png",
-                "/img/imgAlquieres/habitacion2.png",
-                "/img/imgAlquieres/habitacion2.png",
+                assetUrl("img/imgAlquieres/habitacion2.png"),
+                assetUrl("img/imgAlquieres/habitacion2.png"),
+                assetUrl("img/imgAlquieres/habitacion2.png"),
               ],
               features: [
                 "1 habitación",
@@ -140,14 +102,13 @@ const Rentals: React.FC = () => {
             {
               id: 3,
               name: "Casa Familiar Costa",
-              description:
-                "Casa espaciosa para grupos grandes, con jardín privado",
+      description: "Casa espaciosa para grupos grandes, con jardín privado",
               price: 50,
-              image: "/img/imgAlquieres/habitacion3.png",
+              image: assetUrl("img/imgAlquieres/habitacion3.png"),
               images: [
-                "/img/imgAlquieres/habitacion3.png",
-                "/img/imgAlquieres/habitacion3.png",
-                "/img/imgAlquieres/habitacion3.png",
+                assetUrl("img/imgAlquieres/habitacion3.png"),
+                assetUrl("img/imgAlquieres/habitacion3.png"),
+                assetUrl("img/imgAlquieres/habitacion3.png"),
               ],
               features: [
                 "3 habitaciones",
@@ -163,14 +124,13 @@ const Rentals: React.FC = () => {
             {
               id: 4,
               name: "Loft Moderno Seaview",
-              description:
-                "Loft de diseño con terraza panorámica y jacuzzi privado",
+      description: "Loft de diseño con terraza panorámica y jacuzzi privado",
               price: 50,
-              image: "/img/imgAlquieres/habitacion4.png",
+              image: assetUrl("img/imgAlquieres/habitacion4.png"),
               images: [
-                "/img/imgAlquieres/habitacion4.png",
-                "/img/imgAlquieres/habitacion4.png",
-                "/img/imgAlquieres/habitacion4.png",
+                assetUrl("img/imgAlquieres/habitacion4.png"),
+                assetUrl("img/imgAlquieres/habitacion4.png"),
+                assetUrl("img/imgAlquieres/habitacion4.png"),
               ],
               features: [
                 "1 habitación",
@@ -183,31 +143,10 @@ const Rentals: React.FC = () => {
               available: true,
               rating: 4.7,
             },
-          ]);
-          setLoading(false);
-        });
-      }, 1000);
-    };
+  ];
 
-    fetchApartments();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-100 via-yellow-50 to-blue-100">
-        <div className="text-center">
-          <motion.div
-            className="animate-spin rounded-full h-16 w-16 border-4 border-orange-400 border-t-transparent mx-auto mb-4"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          />
-          <p className="text-orange-600 font-medium">
-            Preparando tus vacaciones...
-          </p>
-        </div>
-      </div>
-    );
-  }
+  // Use mock data directly for now
+  const apartments = mockApartments;
 
   return (
     <>
@@ -221,23 +160,41 @@ const Rentals: React.FC = () => {
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-50 to-blue-50">
         {/* Video Hero Section */}
-        <section className="relative h-screen overflow-hidden">
-          <div className="absolute inset-0">
+        <section className="relative h-screen overflow-hidden bg-black">
+            {/* Imagen de fondo como fallback */}
+            <div
+              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+               style={{
+                 backgroundImage: `url('${assetUrl("img/imgAlquieres/mostaganem.jpg")}')`,
+                 zIndex: 0
+               }}
+            />
+
+            {/* Video de fondo */}
             <video
-              src="/img/imgAlquieres/mosta4k.mp4"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ zIndex: 1 }}
               autoPlay
               loop
               muted
               playsInline
-              className="w-full h-full object-cover"
+              preload="metadata"
+              poster={assetUrl("img/imgAlquieres/mostaganem.jpg")}
               onError={(e) => {
-                console.error('Video failed to load:', e);
+                console.error('Error loading video:', e);
+                // Hide video element on error and show background image
+                e.currentTarget.style.display = 'none';
               }}
               onLoadStart={() => console.log('Video loading started')}
-            />
-          </div>
+              onCanPlay={() => console.log('Video can play')}
+              onPlay={() => console.log('Video started playing')}
+              onLoadedData={() => console.log('Video data loaded')}
+            >
+              <source src={assetUrl("img/imgAlquieres/mosta4k.mp4")} type="video/mp4" />
+              Tu navegador no soporta videos HTML5.
+            </video>
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" style={{ zIndex: 2 }}></div>
 
           <div className="relative z-10 h-full flex items-center justify-center">
             <div className="text-center text-white px-4 max-w-6xl mx-auto">
@@ -346,13 +303,11 @@ const Rentals: React.FC = () => {
                       src={apartment.image}
                       alt={apartment.name}
                       className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                      onLoad={() => console.log('Image loaded successfully:', apartment.image)}
                       onError={(e) => {
-                        console.error('Image failed to load:', apartment.image);
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        target.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center bg-gray-200"><span class="text-4xl">🏖️</span></div>';
+                        console.error(`Error loading image: ${apartment.image}`);
+                        e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDQwMCAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjU2IiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOUNBM0FGIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPkltYWdlbiBubyBkaXNwb25pYmxlPC90ZXh0Pgo8L3N2Zz4K';
                       }}
+                      onLoad={() => console.log(`Image loaded: ${apartment.image}`)}
                     />
                     <div className="absolute top-4 right-4 bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-3 py-1 rounded-full text-sm font-bold">
                       🏠 Disponible
@@ -502,9 +457,14 @@ const Rentals: React.FC = () => {
                             }}
                           >
                             <img
-                              src={item.image}
+                              src={assetUrl(item.image)}
                               alt={item.name}
                               className="w-full h-32 object-cover rounded-lg mb-3"
+                              onError={(e) => {
+                                console.error(`Error loading image: ${item.image}`);
+                                e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDMwMCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMTI4IiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjE1MCIgeT0iNjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5Q0EzQUYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiI+SW1hZ2VuIG5vIGRpc3BvbmlibGU8L3RleHQ+Cjwvc3ZnPgo=';
+                              }}
+                              onLoad={() => console.log(`Image loaded: ${item.image}`)}
                             />
                             <h4 className="text-white font-semibold mb-2">
                               {item.name}

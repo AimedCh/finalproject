@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import OrderForm from './OrderForm';
+import SimpleImage from './SimpleImage';
 
 interface Product {
   id: number;
@@ -70,13 +71,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onLearn
         )}
 
         {/* Main Image */}
-        <motion.img
+        <SimpleImage
           src={product.image}
           alt={product.name}
           className="w-full h-full object-contain p-8"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
+          width={400}
+          height={320}
+          priority={false}
         />
 
         {/* Hover Overlay */}

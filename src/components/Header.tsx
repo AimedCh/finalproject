@@ -10,12 +10,10 @@ const Header: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const navigation = [
-    { name: t("home"), href: "/" },
-    { name: t("about"), href: "/about" },
-    { name: t("airpods"), href: "/airpods" },
-    { name: t("rentals"), href: "/rentals" },
-    { name: t("workshop"), href: "/workshop" },
-    { name: t("contact"), href: "/contact" },
+    { name: "Inicio", href: "/" },
+    { name: "Sobre mi", href: "/about" },
+    { name: "Servicios", href: "/services" },
+    { name: "Contacto", href: "/contact" },
   ];
 
   const languages = [
@@ -98,7 +96,7 @@ const Header: React.FC = () => {
               </Link>
             ))}
           </div>
-          
+
           {/* Language Selector */}
           <div className="relative" ref={languageMenuRef}>
             <button

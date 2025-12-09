@@ -11,10 +11,7 @@ const AppleHeader: React.FC<AppleHeaderProps> = ({ cartItemCount = 0, onCartClic
 
   const navItems = [
     { name: 'Sobre mi', href: '/', active: false },
-    { name: 'AirPods', href: '/airpods', active: true },
-    { name: 'Comparar', href: '/compare', active: false },
-    { name: 'Alquileres', href: '/rentals', active: false },
-    { name: 'Taller', href: '/workshop', active: false },
+    { name: 'Services', href: '/services', active: false },
     { name: 'Contacto', href: '/contact', active: false }
   ];
 

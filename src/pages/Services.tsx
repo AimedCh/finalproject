@@ -241,10 +241,10 @@ const Services: React.FC = () => {
         {/* Services Grid */}
         <section className="relative py-20 bg-gray-800 overflow-hidden">
           {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800">
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 pointer-events-none">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-pink-600/5"></div>
             {/* Subtle floating particles */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 pointer-events-none">
               {[...Array(12)].map((_, i) => (
                 <motion.div
                   key={i}
@@ -301,7 +301,7 @@ const Services: React.FC = () => {
               {services.map((service, index) => (
                 <motion.div
                   key={service.id}
-                  className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl group"
+                  className="relative z-10 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl group"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -374,19 +374,23 @@ const Services: React.FC = () => {
                     </motion.div>
 
                     <div className="flex gap-3">
-                      <motion.button
-                        onClick={() => setSelectedService(service.id)}
-                        className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                      <motion.div
+                        className="flex-1 relative z-10 pointer-events-auto"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
                         viewport={{ once: true }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        aria-label={`Ver detalles completos de ${service.title}`}
                       >
-                        Ver Detalles
-                      </motion.button>
+                        <Link
+                          to={service.link}
+                          className="block text-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg relative z-10 pointer-events-auto"
+                          aria-label={`Ir a la página de ${service.title}`}
+                        >
+                          Ver Detalles
+                        </Link>
+                      </motion.div>
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -395,7 +399,7 @@ const Services: React.FC = () => {
                       >
                     <Link
                       to={service.link}
-                          className="inline-flex items-center justify-center w-12 h-12 bg-gray-700 hover:bg-gray-600 text-white rounded-xl transition-all duration-300 transform hover:scale-105"
+                          className="inline-flex items-center justify-center w-12 h-12 bg-gray-700 hover:bg-gray-600 text-white rounded-xl transition-all duration-300 transform hover:scale-105 relative z-10 pointer-events-auto"
                           aria-label={`Ir a la página de ${service.title}`}
                     >
                           <span className="text-lg">→</span>
@@ -403,7 +407,7 @@ const Services: React.FC = () => {
                       </motion.div>
                     </div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 z-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                 </motion.div>
               ))}
             </div>
@@ -413,10 +417,10 @@ const Services: React.FC = () => {
         {/* Why Choose Us Section */}
         <section className="relative py-20 bg-gray-900 overflow-hidden">
           {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900">
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 pointer-events-none">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 via-blue-600/5 to-pink-600/5"></div>
             {/* Subtle floating particles */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 pointer-events-none">
               {[...Array(10)].map((_, i) => (
                 <motion.div
                   key={i}
@@ -534,10 +538,10 @@ const Services: React.FC = () => {
         {/* CTA Section */}
         <section className="relative py-20 bg-gradient-to-br from-purple-600 via-blue-600 to-purple-800 overflow-hidden">
           {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-purple-800">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-purple-800 pointer-events-none">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-pink-500/10"></div>
             {/* Floating particles */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 pointer-events-none">
               {[...Array(15)].map((_, i) => (
                 <motion.div
                   key={i}

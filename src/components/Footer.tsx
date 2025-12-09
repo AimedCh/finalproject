@@ -81,13 +81,28 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center text-gray-400">
             <p>&copy; 2024 Aimed Dine Chebili. Todos los derechos reservados.</p>
-            <div className="flex gap-4 mt-4 sm:mt-0">
-              <Link 
-                to="/cookie-policy" 
+            <div className="flex flex-wrap gap-4 mt-4 sm:mt-0 justify-center">
+              <Link
+                to="/legal-notice"
+                className="text-sm hover:text-primary-400 transition-colors"
+              >
+                Aviso Legal
+              </Link>
+              <span className="text-gray-600">|</span>
+              <Link
+                to="/privacy-policy"
+                className="text-sm hover:text-primary-400 transition-colors"
+              >
+                Política de Privacidad
+              </Link>
+              <span className="text-gray-600">|</span>
+              <Link
+                to="/cookie-policy"
                 className="text-sm hover:text-primary-400 transition-colors"
               >
                 Política de Cookies
               </Link>
+              <span className="text-gray-600">|</span>
               <button
                 onClick={() => {
                   window.dispatchEvent(new CustomEvent('openCookiePreferences'));

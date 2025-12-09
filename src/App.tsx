@@ -6,6 +6,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CookieConsentManager from "./components/CookieConsentManager";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -14,7 +15,10 @@ import Rentals from "./pages/Rentals";
 import Workshop from "./pages/Workshop";
 import Contact from "./pages/Contact";
 import CookiePolicy from "./pages/CookiePolicy";
+import LegalNotice from "./pages/LegalNotice";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import APITest from "./pages/APITest";
+import ImageTest from "./pages/ImageTest";
 
 function App() {
   return (
@@ -22,6 +26,7 @@ function App() {
       <LanguageProvider>
         <AuthProvider>
           <Router>
+            <ScrollToTop />
             <div className="min-h-screen bg-white">
               <Header />
               <main className="pt-16">
@@ -34,7 +39,10 @@ function App() {
                   <Route path="/workshop" element={<Workshop />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/cookie-policy" element={<CookiePolicy />} />
+                  <Route path="/legal-notice" element={<LegalNotice />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/api-test" element={<APITest />} />
+                  <Route path="/image-test" element={<ImageTest />} />
                 </Routes>
               </main>
               <Footer />

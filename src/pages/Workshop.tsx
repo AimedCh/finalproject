@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { assetUrl } from "../utils/assetUrl";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
@@ -44,25 +45,25 @@ const Workshop: React.FC = () => {
     {
       name: "DTC Reading/Clearing",
       description: "Professional diagnostic trouble code reading and clearing",
-      image: "/img/imgTaller/dtcreading.png",
+      image: assetUrl("img/imgTaller/dtcreading.png"),
       icon: "🔧",
     },
     {
       name: "Service Reset",
       description: "Oil change and service interval reset",
-      image: "/img/imgTaller/serviceReset.png",
+      image: assetUrl("img/imgTaller/serviceReset.png"),
       icon: "🔄",
     },
     {
       name: "Mileage Reading",
       description: "Real mileage verification and reading",
-      image: "/img/imgTaller/mileageReading.png",
+      image: assetUrl("img/imgTaller/mileageReading.png"),
       icon: "📊",
     },
     {
       name: "ABS/Airbag Diagnostic",
       description: "Advanced safety system diagnostics",
-      image: "/img/imgTaller/absairbagdiagnostic.png",
+      image: assetUrl("img/imgTaller/absairbagdiagnostic.png"),
       icon: "🛡️",
     },
   ];
@@ -71,7 +72,7 @@ const Workshop: React.FC = () => {
     {
       name: "Key Programming",
       description: "Car key and immobilizer programming",
-      image: "/img/imgTaller/keyprogramming.png",
+      image: assetUrl("img/imgTaller/keyprogramming.png"),
       icon: "🔑",
     },
     {
@@ -84,19 +85,19 @@ const Workshop: React.FC = () => {
     {
       name: "Airbag Reset",
       description: "Crash airbag system reset and repair",
-      image: "/img/imgTaller/airbagreset.png",
+      image: assetUrl("img/imgTaller/airbagreset.png"),
       icon: "🛡️",
     },
     {
       name: "ECU Cloning",
       description: "Engine control unit cloning and programming",
-      image: "/img/imgTaller/ecucloning.png",
+      image: assetUrl("img/imgTaller/ecucloning.png"),
       icon: "🔧",
     },
     {
       name: "Engine Tuning",
       description: "Engine remapping and performance tuning",
-      image: "/img/imgTaller/engineTuning.png",
+      image: assetUrl("img/imgTaller/engineTuning.png"),
       icon: "⚙️",
     },
   ];
@@ -105,25 +106,25 @@ const Workshop: React.FC = () => {
     {
       name: "Shock Absorbers",
       description: "Shock absorber replacement and repair",
-      image: "/img/imgTaller/shockabsorbers.png",
+      image: assetUrl("img/imgTaller/shockabsorbers.png"),
       icon: "🔩",
     },
     {
       name: "Ball Joints",
       description: "Ball joint replacement and alignment",
-      image: "/img/imgTaller/ballJoints.png",
+      image: assetUrl("img/imgTaller/ballJoints.png"),
       icon: "⚙️",
     },
     {
       name: "Wheel Alignment",
       description: "Professional wheel alignment service",
-      image: "/img/imgTaller/wheelalignment.png",
+      image: assetUrl("img/imgTaller/wheelalignment.png"),
       icon: "🎯",
     },
     {
       name: "Suspension",
       description: "Complete suspension system repair",
-      image: "/img/imgTaller/suspension.png",
+      image: assetUrl("img/imgTaller/suspension.png"),
       icon: "🔧",
     },
   ];
@@ -132,25 +133,25 @@ const Workshop: React.FC = () => {
     {
       name: "Renault CLIP",
       description: "Official Renault diagnostic tool",
-      image: "/img/imgTaller/renaultclip.png",
+      image: assetUrl("img/imgTaller/renaultclip.png"),
       icon: "🛠️",
     },
     {
       name: "VCDS",
       description: "VAG-COM diagnostic system",
-      image: "/img/imgTaller/vcds.png",
+      image: assetUrl("img/imgTaller/vcds.png"),
       icon: "💻",
     },
     {
       name: "Launch X431",
       description: "Multi-brand diagnostic scanner",
-      image: "/img/imgTaller/launchx431.png",
+      image: assetUrl("img/imgTaller/launchx431.png"),
       icon: "📱",
     },
     {
       name: "Delphi/Autocom",
       description: "Professional diagnostic equipment",
-      image: "/img/imgTaller/delphiautocom.png",
+      image: assetUrl("img/imgTaller/delphiautocom.png"),
       icon: "🔧",
     },
   ];
@@ -159,19 +160,19 @@ const Workshop: React.FC = () => {
     {
       name: "Kess/Ktag",
       description: "Advanced ECU reading and writing tool",
-      image: "/img/imgTaller/kessktag.png",
+      image: assetUrl("img/imgTaller/kessktag.png"),
       icon: "⚙️",
     },
     {
       name: "Autotuner",
       description: "Professional tuning software",
-      image: "/img/imgTaller/autotunerr.png",
+      image: assetUrl("img/imgTaller/autotunerr.png"),
       icon: "💻",
     },
     {
       name: "Flex",
       description: "Multi-protocol diagnostic tool",
-      image: "/img/imgTaller/flex.png",
+      image: assetUrl("img/imgTaller/flex.png"),
       icon: "🔧",
     },
     {
@@ -184,31 +185,31 @@ const Workshop: React.FC = () => {
     {
       name: "FGTech",
       description: "Ferrari and exotic car diagnostics",
-      image: "/img/imgTaller/fgtech.png",
+      image: assetUrl("img/imgTaller/fgtech.png"),
       icon: "🏎️",
     },
     {
       name: "UPA",
       description: "Universal programmer adapter",
-      image: "/img/imgTaller/upa.png",
+      image: assetUrl("img/imgTaller/upa.png"),
       icon: "🔌",
     },
     {
       name: "VVDI",
       description: "Vehicle diagnostic and programming",
-      image: "/img/imgTaller/vvdi.png",
+      image: assetUrl("img/imgTaller/vvdi.png"),
       icon: "🔧",
     },
     {
       name: "Orange5",
       description: "Advanced key programming tool",
-      image: "/img/imgTaller/orange5.png",
+      image: assetUrl("img/imgTaller/orange5.png"),
       icon: "🔑",
     },
     {
       name: "Xprog",
       description: "Universal chip programmer",
-      image: "/img/imgTaller/xprog.png",
+      image: assetUrl("img/imgTaller/xprog.png"),
       icon: "💾",
     },
   ];
@@ -256,7 +257,7 @@ const Workshop: React.FC = () => {
         <section className="relative h-screen overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="/img/imgTaller/aimeddiagsolutions.jpg" 
+              src={assetUrl("img/imgTaller/aimeddiagsolutions.jpg")} 
               alt="Aimed Diag Solution Workshop" 
               className="w-full h-full object-cover"
             />
