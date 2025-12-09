@@ -2,6 +2,9 @@
 
 Una plataforma completa que combina tres servicios especializados: **AirPods Store**, **Alquileres de Verano** y **Taller Automotriz**. Desarrollado por Aimed Dine Chebili como un proyecto integral que demuestra habilidades en desarrollo full-stack moderno con **React + Laravel**.
 
+<img width="941" height="446" alt="frontend_pic" src="https://github.com/user-attachments/assets/0d78cf1f-fa60-4712-a723-8a1a4f991d31" />
+
+
 ## 🆕 Últimas Actualizaciones (Enero 2025)
 
 - ✅ **Backend Laravel Completo** - Sistema CRUD completo con autenticación
@@ -46,6 +49,9 @@ Una plataforma completa que combina tres servicios especializados: **AirPods Sto
 ## 🛠️ Tecnologías Utilizadas
 
 ### Frontend
+
+https://github.com/user-attachments/assets/c894c0b6-f76f-45df-aa45-2bf6ab609a31
+
 - **React 19** - Framework principal con hooks modernos
 - **TypeScript** - Tipado estático para mejor desarrollo
 - **Tailwind CSS** - Estilos y diseño responsivo
@@ -56,6 +62,9 @@ Una plataforma completa que combina tres servicios especializados: **AirPods Sto
 - **Vite** - Build tool y dev server ultra-rápido
 
 ### Backend
+
+https://github.com/user-attachments/assets/029ae8cc-83a8-4986-a272-4c8c4a074b4a
+
 - **Laravel 11** - Framework PHP robusto y escalable
 - **SQLite** - Base de datos ligera y eficiente
 - **Eloquent ORM** - Mapeo objeto-relacional elegante
